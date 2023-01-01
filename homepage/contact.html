@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>Kacper resume</title>
+    </head>
+    <body>
+        <nav class="navbar sticky-top navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="contact.html">
+                    <img src="https://cdn.7tv.app/emote/61fbb7c88727417092c978b3/4x.webp" alt="" width="40" height="40" class="d-inline-block align-text-center">
+                    Hello there!
+                </a>
+                <a class="nav-link active" aria-current="page" href="index.html">Main page</a>
+                <a class="nav-link" href="contact.html">Contact</a>
+                <a class="nav-link" href="puppies.html">Puppies</a>
+                <a class="nav-link" href="dogs.html">Dogs</a>
+                <a class="nav-link disabled">Sign in</a>
+            </div>
+        </nav>
+        <div class="row mx-auto mb-5">
+          <h1 class="text-center">Welcome to the contact form page!</h1>
+
+          <h5>Fill that form below to send me an information ༼ つ ◕_◕ ༽つ</h5>
+        </div>
+        <form class="needs-validation was-validated" novalidate>
+            <div class="row mx-2">
+              <div class="col">
+                <label for="validationTooltip01" class="form-label">First name:</label>
+                <input type="text" class="form-control" id="validationTooltip01" value="" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+              <div class="col-8"></div>
+            </div>
+            <div class="row mx-2">
+              <div class="col">
+                <label for="validationTooltip02" class="form-label">Last name</label>
+                <input type="text" class="form-control" id="validationTooltip02" value="" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+              <div class="col-8">
+              </div>
+            </div>
+            <div class="row mx-2">
+              <div class="col">
+                <label for="validationTooltipUsername" class="form-label">Username</label>
+                <div class="input-group has-validation">
+                  <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
+                  <input type="text" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
+                  <div class="invalid-feedback">
+                    Please choose a unique and valid username.
+                  </div>
+                </div>
+              </div>
+              <div class="col-8">
+              </div>
+            </div>
+            <div class="row mx-2">
+              <div class="col">
+                <label for="validationTooltip03" class="form-label">City</label>
+                <input type="text" class="form-control" id="validationTooltip03" required>
+                <div class="invalid-feedback">
+                  Please provide a valid city.
+                </div>
+              </div>
+              <div class="col-8"></div>
+            </div>
+            <div class="row mx-2">
+              <div class="col">
+                <label for="validationTooltip04" class="form-label">State</label>
+                <select class="form-select" id="validationTooltip04" required>
+                  <option selected disabled value="">Choose...</option>
+                  <option>Lesser Poland</option>
+                  <option>Subcarpatian</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a valid state.
+                </div>
+              </div>
+              <div class="col-8"></div>
+            </div>
+            <div class="row mx-2">
+              <div class="col">
+                <label for="validationTooltip05" class="form-label">Zip</label>
+                <input type="text" class="form-control" id="validationTooltip05" required>
+                <div class="invalid-feedback">
+                  Please provide a valid zip.
+                </div>
+              </div>
+              <div class="col-8"></div>
+            </div>
+            <div class="row mx-2">
+              <div class="col">
+                <label for="validationTextarea" class="form-label">Textarea</label>
+                <textarea class="form-control" id="validationTextarea" placeholder="Required example textarea" required></textarea>
+                <div class="invalid-feedback">
+                  Please enter a message in the textarea.
+                </div>
+              </div>
+              <div class="col-8">
+
+              </div>
+            </div>
+            <div class="col-12 mt-3 mx-2">
+              <button class="btn btn-primary" type="submit">Submit form</button>
+            </div>
+          </form>
+          <script>
+            // Example starter JavaScript for disabling form submissions if there are invalid fields
+            (function () {
+              'use strict'
+
+              // Fetch all the forms we want to apply custom Bootstrap validation styles to
+              var forms = document.querySelectorAll('.needs-validation')
+
+              // Loop over them and prevent submission
+              Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                  form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                      event.preventDefault()
+                      event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                  }, false)
+                })
+            })()
+          </script>
+    </body>
+</html>

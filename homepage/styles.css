@@ -1,0 +1,35 @@
+.nav-link, .navbar-brand{
+    color: white;
+}
+body{
+    background-color: #f2f2ed;
+}
+.zwiftlink{
+    color: #fa682b;
+}
+h1{
+    font-family: "Courier New", Courier, monospace;
+}
+#headerrow{
+    margin-bottom: 20px;
+}
+#rownav{
+    color: black;
+}
+.tiny{
+    font-size: 9px;
+}
+#random_image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 80vh;
+}
+h3{
+    text-decoration: line-through;
+    color: purple;
+}
+h2{
+    text-decoration: underline;
+    color: green;
+}

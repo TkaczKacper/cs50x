@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>Crazy dogs</title>
+    </head>
+    <body>
+        <nav class="navbar sticky-top navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="dogs.html">
+                    <img src="https://www.clipartmax.com/png/full/251-2516439_fu…-clipart-cute-dog-with-background-transparent.png" alt="" width="70" height="50" class="d-inline-block align-text-center">
+                    What's up dogers?
+                </a>
+                <a class="nav-link active" aria-current="page" href="index.html">Main page</a>
+                <a class="nav-link" href="contact.html">Contact</a>
+                <a class="nav-link" href="puppies.html">Puppies</a>
+                <a class="nav-link" href="dogs.html">Dogs</a>
+                <a class="nav-link disabled">Sign in</a>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col-11 text-center">
+                <h1>Take a look at a random samoyed photo :3</h1>
+            </div>
+            <div class="col">
+                <button id="randomBtn" onclick="randomFunction()">Any Samoyeders?</button>
+            </div>
+        </div>
+        <img src="" id="random_image">
+        <script >
+            var image = document.getElementById("#display");
+            function randomFunction(){
+                var XHR = new XMLHttpRequest();
+                XHR.onreadystatechange = function() {
+                    if (XHR.readyState == 4 && XHR.status == 200) {
+                    var n = JSON.parse(XHR.responseText);
+                    var link = n.message;
+                    console.log(n.message);
+                    const image = document.getElementById("random_image");
+                    image.src = link;
+                    }
+                };
+                var url = "https://dog.ceo/api/breed/samoyed/images/random"
+                XHR.open("GET", url);
+                XHR.send();
+            }
+        </script>
+    </body>
+</html>
