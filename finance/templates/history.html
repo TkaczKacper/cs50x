@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Stock Symbol</th>
+                <th>Amount</th>
+                <th>Type</th>
+                <th>Date of transaction</th>
+                <th>Transaction value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in history_data %}
+                <tr>
+                    <td>{{ data["stockName"].upper() }}</td>
+                    <td>{{ data["stockAmount"] }}</td>
+                    {% if data["transactionType"]==1 %}
+                        <td>buy</td>
+                    {% else %}
+                        <td>sell</td>
+                    {% endif %}
+
+                    <td>{{ data["transactionDate"] }}</td>
+                    <td>{{ data["cash"]|usd }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Wallet
+{% endblock %}
+
+{% block main %}
+
+    <h1>Your wallet!</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Stock Symbol</th>
+                <th>Stock Name</th>
+                <th>Amount</th>
+                <th>Value per stock</th>
+                <th>Current total value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in portfolio_updated %}
+                <tr>
+                    <td>{{ data["stockSymbol"] }}</td>
+                    <td>{{ data["stockName"] }}</td>
+                    <td>{{ data["stockAmount"] }}</td>
+                    <td>{{ data["stockValue"]|usd }}</td>
+                    <td>{{ (data["stockValue"] * data["stockAmount"])|usd}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="border-0"></td>
+                <td class="border-0"></td>
+                <td class="border-0"></td>
+                <td class="border-0 fw-bold text-end">
+                    Wallet cash
+                </td>
+                <td class="border-0 text-start">{{ cash_amount|usd }}</td>
+            </tr>
+            <tr>
+                <td class="border-0"></td>
+                <td class="border-0"></td>
+                <td class="border-0"></td>
+                <td class="fw-bold text-end">
+                    Stock value
+                </td>
+                <td class="text-start">{{ stock_value|usd }}</td>
+            </tr>
+            <tr>
+                <td class="border-0"></td>
+                <td class="border-0"></td>
+                <td class="border-0"></td>
+                <td class="border-0 fw-bold text-end">
+                    Total
+                </td>
+                <td class="border-0 text-start">{{ (cash_amount + stock_value)|usd }}</td>
+            </tr>
+        </tfoot>
+    </table>
+
+{% endblock %}

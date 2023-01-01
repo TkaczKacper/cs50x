@@ -1,0 +1,28 @@
+{% extends "quote.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block quoted %}
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Stock Symbol</th>
+                <th>Stock Name</th>
+                <th>Current price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ stock_symbol }}</td>
+                <td>{{ stock_name }}</td>
+                <td>{{ stock_price | usd }}</td>
+            </tr>
+        </tbody>
+    </table>
+    {% block buy %}
+
+    {% endblock %}
+{% endblock %}

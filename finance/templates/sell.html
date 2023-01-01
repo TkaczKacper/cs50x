@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+
+    <h2>Select stock symbol and amount you want to sell!</h1>
+
+    <form action="/sell" method="post">
+        <div class="quote_form">
+            <select class="form-control w-auto" name="symbol">
+                <option disabled selected>stock name</option>
+                {% for name in stock_name %}
+                    <option value="{{ name['stockSymbol'] }}"> {{ name['stockSymbol'] }} </option>
+                {% endfor %}
+            </select>
+            <input autocomplete="off" autofocus class="form-control" id="buy_amount" name="shares" placeholder="amount" type="number">
+            <button class="btn btn-primary" id="quote_submit" type="submit">Sell</button>
+        </div>
+    </form>
+
+{% endblock %}
